@@ -14,6 +14,8 @@
 		7199EEFE1C466FF200EBEEA8 /* TheaterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7199EEFD1C466FF200EBEEA8 /* TheaterTests.swift */; };
 		7199EF091C466FF200EBEEA8 /* TheaterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7199EF081C466FF200EBEEA8 /* TheaterUITests.swift */; };
 		7199EF171C46706000EBEEA8 /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7199EF161C46706000EBEEA8 /* MoviesViewController.swift */; };
+		7199EF1A1C4679E400EBEEA8 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7199EF191C4679E400EBEEA8 /* MovieCell.swift */; };
+		E794B60D3C2DE9960D0ADD68 /* Pods_Theater.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C47052F4C24E9A6D0F205706 /* Pods_Theater.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		28EC7FE18F71D733C4A7F12E /* Pods-Theater.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Theater.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Theater/Pods-Theater.debug.xcconfig"; sourceTree = "<group>"; };
+		3700D7E6A8CF61292BCA250D /* Pods-Theater.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Theater.release.xcconfig"; path = "Pods/Target Support Files/Pods-Theater/Pods-Theater.release.xcconfig"; sourceTree = "<group>"; };
 		7199EEE51C466FF100EBEEA8 /* Theater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Theater.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7199EEE81C466FF100EBEEA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7199EEED1C466FF100EBEEA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -47,6 +51,8 @@
 		7199EF081C466FF200EBEEA8 /* TheaterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterUITests.swift; sourceTree = "<group>"; };
 		7199EF0A1C466FF200EBEEA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7199EF161C46706000EBEEA8 /* MoviesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
+		7199EF191C4679E400EBEEA8 /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
+		C47052F4C24E9A6D0F205706 /* Pods_Theater.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Theater.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E794B60D3C2DE9960D0ADD68 /* Pods_Theater.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +88,8 @@
 				7199EEFC1C466FF200EBEEA8 /* TheaterTests */,
 				7199EF071C466FF200EBEEA8 /* TheaterUITests */,
 				7199EEE61C466FF100EBEEA8 /* Products */,
+				CCB3438A3192E159A52EA78B /* Pods */,
+				D23590E5C19D07274981C066 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,12 +106,13 @@
 		7199EEE71C466FF100EBEEA8 /* Theater */ = {
 			isa = PBXGroup;
 			children = (
+				7199EF1B1C4679F200EBEEA8 /* View Controllers */,
+				7199EF181C4679C300EBEEA8 /* Views */,
 				7199EEE81C466FF100EBEEA8 /* AppDelegate.swift */,
 				7199EEEC1C466FF100EBEEA8 /* Main.storyboard */,
 				7199EEEF1C466FF100EBEEA8 /* Assets.xcassets */,
 				7199EEF11C466FF100EBEEA8 /* LaunchScreen.storyboard */,
 				7199EEF41C466FF100EBEEA8 /* Info.plist */,
-				7199EF161C46706000EBEEA8 /* MoviesViewController.swift */,
 			);
 			path = Theater;
 			sourceTree = "<group>";
@@ -125,6 +135,39 @@
 			path = TheaterUITests;
 			sourceTree = "<group>";
 		};
+		7199EF181C4679C300EBEEA8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7199EF191C4679E400EBEEA8 /* MovieCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		7199EF1B1C4679F200EBEEA8 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7199EF161C46706000EBEEA8 /* MoviesViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		CCB3438A3192E159A52EA78B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				28EC7FE18F71D733C4A7F12E /* Pods-Theater.debug.xcconfig */,
+				3700D7E6A8CF61292BCA250D /* Pods-Theater.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D23590E5C19D07274981C066 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C47052F4C24E9A6D0F205706 /* Pods_Theater.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +175,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7199EF0D1C466FF200EBEEA8 /* Build configuration list for PBXNativeTarget "Theater" */;
 			buildPhases = (
+				BA00EA7E635ADBD9CA634AC1 /* Check Pods Manifest.lock */,
 				7199EEE11C466FF100EBEEA8 /* Sources */,
 				7199EEE21C466FF100EBEEA8 /* Frameworks */,
 				7199EEE31C466FF100EBEEA8 /* Resources */,
+				3F564DEB368C5890D68B5FC5 /* Embed Pods Frameworks */,
+				F0D09ED6E60FD0493857D88D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -254,6 +300,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3F564DEB368C5890D68B5FC5 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Theater/Pods-Theater-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BA00EA7E635ADBD9CA634AC1 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F0D09ED6E60FD0493857D88D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Theater/Pods-Theater-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7199EEE11C466FF100EBEEA8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -261,6 +355,7 @@
 			files = (
 				7199EEE91C466FF100EBEEA8 /* AppDelegate.swift in Sources */,
 				7199EF171C46706000EBEEA8 /* MoviesViewController.swift in Sources */,
+				7199EF1A1C4679E400EBEEA8 /* MovieCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +495,7 @@
 		};
 		7199EF0E1C466FF200EBEEA8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 28EC7FE18F71D733C4A7F12E /* Pods-Theater.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Theater/Info.plist;
@@ -411,6 +507,7 @@
 		};
 		7199EF0F1C466FF200EBEEA8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3700D7E6A8CF61292BCA250D /* Pods-Theater.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Theater/Info.plist;
@@ -487,6 +584,7 @@
 				7199EF0F1C466FF200EBEEA8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7199EF101C466FF200EBEEA8 /* Build configuration list for PBXNativeTarget "TheaterTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +593,7 @@
 				7199EF121C466FF200EBEEA8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7199EF131C466FF200EBEEA8 /* Build configuration list for PBXNativeTarget "TheaterUITests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +602,7 @@
 				7199EF151C466FF200EBEEA8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
