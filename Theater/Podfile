@@ -5,6 +5,8 @@ use_frameworks!
 
 target 'Theater' do
     pod 'AFNetworking'
+    pod "DGElasticPullToRefresh"
+    pod "RJImageLoader"
 end
 
 target 'TheaterTests' do

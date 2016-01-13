@@ -8,6 +8,8 @@
 
 import UIKit
 import AFNetworking
+import DGElasticPullToRefresh
+import RJImageLoader
 
 class MoviesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -17,6 +19,17 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Initialize tableView
+        let loadingView = DGElasticPullToRefreshLoadingViewCircle()
+        loadingView.tintColor = UIColor(red: 78/255.0, green: 221/255.0, blue: 200/255.0, alpha: 1.0)
+        tableView.dg_addPullToRefreshWithActionHandler({ [weak self] () -> Void in
+            // Add your logic here
+            // Do not forget to call dg_stopLoading() at the end
+            self?.tableView.reloadData()
+            self?.tableView.dg_stopLoading()
+            }, loadingView: loadingView)
+        tableView.dg_setPullToRefreshFillColor(UIColor(red: 57/255.0, green: 67/255.0, blue: 89/255.0, alpha: 1.0))
+        tableView.dg_setPullToRefreshBackgroundColor(tableView.backgroundColor!)
         tableView.dataSource = self
         tableView.delegate = self
         
@@ -78,10 +91,16 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         
         cell.titleLabel.text = title
         cell.overviewLabel.text = overview
+        //cell.posterView.startLoader()
+        
         cell.posterView.setImageWithURL(imageUrl!)
         
         print("row \(indexPath.row)")
         return cell
+    }
+    
+    deinit {
+        tableView.dg_removePullToRefresh()
     }
     
     /*

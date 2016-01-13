@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '8C7C87835985A4F9B8FA0D12'
-               BlueprintName = 'Pods-Theater'
+               BlueprintIdentifier = '6313BE51B3100C9138926B6D'
+               BlueprintName = 'RJImageLoader'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'Pods_Theater.framework'>
+               BuildableName = 'RJImageLoader.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
