@@ -1,5 +1,5 @@
 # Theater
-# Project 1 - *Name of App Here*
+# Project 1 - *Theater*
 
 **Theater** is a movies app using the [The Movie Database API](http://docs.themoviedb.apiary.io/#).
 
