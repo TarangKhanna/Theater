@@ -14,17 +14,23 @@ PODS:
   - AFNetworking/Serialization (3.0.4)
   - AFNetworking/UIKit (3.0.4):
     - AFNetworking/NSURLSession
+  - DGActivityIndicatorView (2.0)
   - DGElasticPullToRefresh (1.0.3)
   - RJImageLoader (0.3.0)
+  - SwiftSpinner (0.8.0)
 
 DEPENDENCIES:
   - AFNetworking
+  - DGActivityIndicatorView
   - DGElasticPullToRefresh
   - RJImageLoader
+  - SwiftSpinner
 
 SPEC CHECKSUMS:
   AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
+  DGActivityIndicatorView: 52875b025a6ccf6a431a905285c12e2bb95eb559
   DGElasticPullToRefresh: 040f39ae69840b3261d163fe6735c5901bf851e9
   RJImageLoader: f0d9edebeb7837feb0ce51759826900645770db7
+  SwiftSpinner: 11c2c5ec7443d92f3026d3067ca8a91d4adef13f
 
 COCOAPODS: 0.39.0

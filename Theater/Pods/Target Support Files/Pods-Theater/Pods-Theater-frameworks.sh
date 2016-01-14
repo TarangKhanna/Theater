@@ -85,11 +85,15 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Theater/AFNetworking.framework"
+  install_framework "Pods-Theater/DGActivityIndicatorView.framework"
   install_framework "Pods-Theater/DGElasticPullToRefresh.framework"
   install_framework "Pods-Theater/RJImageLoader.framework"
+  install_framework "Pods-Theater/SwiftSpinner.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Theater/AFNetworking.framework"
+  install_framework "Pods-Theater/DGActivityIndicatorView.framework"
   install_framework "Pods-Theater/DGElasticPullToRefresh.framework"
   install_framework "Pods-Theater/RJImageLoader.framework"
+  install_framework "Pods-Theater/SwiftSpinner.framework"
 fi

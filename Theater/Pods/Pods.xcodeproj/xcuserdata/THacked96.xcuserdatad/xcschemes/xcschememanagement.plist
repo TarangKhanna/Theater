@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>DGActivityIndicatorView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>DGElasticPullToRefresh.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -24,15 +29,15 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SwiftSpinner.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>115824B7CB2E76E5ACB836A251E79404</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>11B6E626E80E14ED208B2BFBC0875184</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -42,7 +47,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B826E9A08FEB25D1603A9453C007735E</key>
+		<key>1CB9BA71279D7B23523868A910270477</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>214BFCA3BA455F98FAFDC1A1EA41B369</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>291621037D68F7869D267C25CE205F97</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B3BB6C00FB29154A88EF560C82313C37</key>
 		<dict>
 			<key>primary</key>
 			<true/>
