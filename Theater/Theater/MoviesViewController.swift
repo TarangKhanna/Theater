@@ -24,9 +24,9 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     let activityIndicatorView = DGActivityIndicatorView(type: DGActivityIndicatorAnimationType.FiveDots, tintColor: UIColor(red: 78/255.0, green: 221/255.0, blue: 200/255.0, alpha: 1.0), size: 70.0)
     
     override func viewWillAppear(animated: Bool) {
-        let myTopPadding: CGFloat = 20
-        self.tableView.contentInset = UIEdgeInsetsMake(myTopPadding, 0, 0, 0);
-        
+//        let myTopPadding: CGFloat = 20
+//        self.tableView.contentInset = UIEdgeInsetsMake(myTopPadding, 0, 0, 0);
+        self.view.backgroundColor = UIColor(red: 221/255.0, green: 221/255.0, blue: 221/255.0, alpha: 1)
         activityIndicatorView.center = self.view.center
         self.view.addSubview(activityIndicatorView)
         activityIndicatorView.startAnimating()
@@ -103,15 +103,21 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         }
     }
     
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        tableView.deselectRowAtIndexPath(indexPath, animated: false)
+    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("MovieCell", forIndexPath: indexPath) as! MovieCell
         
+        cell.accessoryType = UITableViewCellAccessoryType.None
         let movie = movies![indexPath.row]
         let title = movie["title"] as! String
         let id = movie["id"] as! Int
         
         let overview = movie["overview"] as! String
-//        let posterPath = movie["poster_path"] as? String
         print("title:\(title) id:\(id)")
         
         let baseUrl = "http://image.tmdb.org/t/p/w500"
@@ -123,12 +129,24 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         }
         cell.titleLabel.text = title
         cell.overviewLabel.text = overview
-        
-        
-    
+        cell.textLabel!.sizeToFit()
         return cell
     }
-    
+//    
+//    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
+//    {
+//        let movie = movies![indexPath.row]
+//        var height:CGFloat = self.calculateHeightForString(movie["overview"] as! String)
+//        return height + 70.0
+//    }
+//    
+//    func calculateHeightForString(inString:String) -> CGFloat
+//    {
+//        let messageString = inString
+//        
+//        return requredSize.height  //to include button's in your tableview
+//        
+//    }
 
     deinit {
         tableView.dg_removePullToRefresh()
