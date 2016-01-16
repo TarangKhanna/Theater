@@ -68,8 +68,6 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         let task : NSURLSessionDataTask = session.dataTaskWithRequest(request,
             completionHandler: { (dataOrNil, response, error) in
                 if error != nil{
-                    print("here")
-//                    self.tableView.hidden = true
                     self.view.bringSubviewToFront(self.offlineImage)
                     self.view.bringSubviewToFront(self.statusLabel)
                     self.offlineImage.hidden = false
@@ -110,24 +108,26 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         
         let movie = movies![indexPath.row]
         let title = movie["title"] as! String
+        let id = movie["id"] as! Int
         
         let overview = movie["overview"] as! String
-        let posterPath = movie["poster_path"] as! String
+//        let posterPath = movie["poster_path"] as? String
+        print("title:\(title) id:\(id)")
         
         let baseUrl = "http://image.tmdb.org/t/p/w500"
-        let imageUrl = NSURL(string: baseUrl + posterPath)
-        
-        
+        if let posterPath = movie["poster_path"] as? String {
+            let imageUrl = NSURL(string: baseUrl + posterPath)
+            cell.posterView.setImageWithURL(imageUrl!)
+        } else {
+            cell.posterView.image = UIImage(named: "no_image.png")
+        }
         cell.titleLabel.text = title
         cell.overviewLabel.text = overview
-        //cell.posterView.startLoader()
         
-        cell.posterView.setImageWithURL(imageUrl!)
         
-        print("row \(indexPath.row)")
+    
         return cell
     }
-    
     
 
     deinit {
