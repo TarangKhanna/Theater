@@ -9,10 +9,22 @@
 import UIKit
 
 class DetailedViewController: UIViewController {
-
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
+    var descriptionPassed:String = ""
+    var titlePassed:String? = ""
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        descriptionLabel.text = descriptionPassed
+        titleLabel.text = titlePassed
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
 

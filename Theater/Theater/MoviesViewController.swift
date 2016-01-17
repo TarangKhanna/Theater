@@ -107,6 +107,22 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
+        let currentCell = tableView.cellForRowAtIndexPath(indexPath)! as UITableViewCell
+        self.performSegueWithIdentifier("details", sender: currentCell)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if let cell = sender as? UITableViewCell {
+            let row = tableView.indexPathForCell(cell)!.row
+            if segue.identifier == "details" {
+                let vc = segue.destinationViewController as! DetailedViewController
+                let movie = movies![row]
+                let title = movie["title"] as! String
+                let description = movie["overview"] as! String
+                vc.titlePassed = title
+                vc.descriptionPassed = description
+            }
+        }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
