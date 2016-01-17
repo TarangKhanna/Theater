@@ -29,9 +29,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" red="0.91372549020000005" green="0.91372549020000005" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" id="rIE-NY-Lx9">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MovieCell" rowHeight="182" id="JqY-ek-gGU" customClass="MovieCell" customModule="Theater" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="182"/>
+                                        <rect key="frame" x="0.0" y="72" width="375" height="182"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JqY-ek-gGU" id="xWD-1K-GdK">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="182"/>
@@ -95,6 +100,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="offlineImage" destination="Zmb-7G-bMi" id="cVk-51-6A8"/>
+                        <outlet property="searchBar" destination="rIE-NY-Lx9" id="1Rg-5g-qU3"/>
                         <outlet property="statusLabel" destination="sOE-Uh-4e8" id="Ogk-2Y-S3k"/>
                         <outlet property="tableView" destination="vAh-Ag-nuw" id="glh-S5-9Zl"/>
                         <segue destination="Cgw-NS-frx" kind="push" identifier="details" id="vRD-Vo-tpw"/>
