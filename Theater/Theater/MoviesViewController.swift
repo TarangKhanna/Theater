@@ -32,10 +32,7 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.edgesForExtendedLayout = UIRectEdge.All
-//        self.tableView.contentInset = UIEdgeInsetsMake(0.0, 0.0, CGRectGetHeight(self.tabBarController!.tabBar.frame), 0.0)
-        
-        
+        tableView.contentInset = UIEdgeInsetsMake(0, 0, 75, 0)
         activityIndicatorView.center = self.view.center
         self.view.addSubview(activityIndicatorView)
         activityIndicatorView.startAnimating()
@@ -142,7 +139,31 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         
         if let posterPath = movie["poster_path"] as? String {
             let imageUrl = NSURL(string: baseUrl + posterPath)
-            cell.posterView.setImageWithURL(imageUrl!)
+            let imageRequest = NSURLRequest(URL: imageUrl!)
+            
+            cell.posterView.setImageWithURLRequest(
+                imageRequest,
+                placeholderImage: nil,
+                success: { (imageRequest, imageResponse, image) -> Void in
+                    
+                    // imageResponse will be nil if the image is cached
+                    if imageResponse != nil {
+//                        print("Image was NOT cached, fade in image")
+                        cell.posterView.alpha = 0.0
+                        cell.posterView.image = image
+                        UIView.animateWithDuration(0.3, animations: { () -> Void in
+                            cell.posterView.alpha = 1.0
+                        })
+                    } else {
+//                        print("Image was cached so just update the image")
+                        cell.posterView.image = image
+                    }
+                },
+                failure: { (imageRequest, imageResponse, error) -> Void in
+                    // do something for the failure condition
+                    cell.posterView.image = UIImage(named: "no_image.png")
+            })
+//            cell.posterView.setImageWithURL(imageUrl!)
         } else {
             cell.posterView.image = UIImage(named: "no_image.png")
         }
@@ -154,34 +175,8 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         cell.textLabel!.sizeToFit()
         return cell
     }
-//    
-//    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
-//    {
-//        let movie = movies![indexPath.row]
-//        var height:CGFloat = self.calculateHeightForString(movie["overview"] as! String)
-//        return height + 70.0
-//    }
-//    
-//    func calculateHeightForString(inString:String) -> CGFloat
-//    {
-//        let messageString = inString
-//        
-//        return requredSize.height  //to include button's in your tableview
-//        
-//    }
-
+    
     deinit {
         tableView.dg_removePullToRefresh()
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
