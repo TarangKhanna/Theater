@@ -20,11 +20,13 @@ The following **optional** features are implemented:
 - [ ] Movies are displayed using a CollectionView instead of a TableView.
 - [ ] User can search for a movie.
 - [ ] All images fade in as they are loading.
-- [ ] Customize the UI.
+- [x] Customize the UI.
 
 The following **additional** features are implemented:
 
-- [ ] List anything else that you can get done to improve the app functionality!
+- [x] Cards like tableview 
+- [x] Ratings shows in star format (out of 5)
+- [x] Trailer is shown 
 
 ## Video Walkthrough 
 
