@@ -14,7 +14,9 @@ class DetailedViewController: UIViewController {
     @IBOutlet var videoPlayer: YouTubePlayerView!
     
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
+    
+    @IBOutlet weak var descriptionText: UITextView!
+    
     
     var movies: [NSDictionary]?
     var descriptionPassed:String = ""
@@ -23,7 +25,7 @@ class DetailedViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        descriptionLabel.text = descriptionPassed
+        descriptionText.text = descriptionPassed
         titleLabel.text = titlePassed
         retrieve()
     }
@@ -46,8 +48,12 @@ class DetailedViewController: UIViewController {
                     if let responseDictionary = try! NSJSONSerialization.JSONObjectWithData(
                         data, options:[]) as? NSDictionary {
                             self.movies = responseDictionary["results"] as? [NSDictionary]
-                            let videoId = self.movies![0]["key"] as! String
-                            self.videoPlayer.loadVideoID(videoId)
+                            if ((self.movies?.isEmpty) == false) {
+                                if let videoId = self.movies![0]["key"] as? String {
+                                    
+                                    self.videoPlayer.loadVideoID(videoId)
+                                }
+                            }
                     }
                 }
         });

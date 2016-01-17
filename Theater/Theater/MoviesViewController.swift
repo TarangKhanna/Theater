@@ -25,9 +25,6 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     
     override func viewWillAppear(animated: Bool) {
         self.view.backgroundColor = UIColor(red: 221/255.0, green: 221/255.0, blue: 221/255.0, alpha: 1)
-//        activityIndicatorView.center = self.view.center
-//        self.view.addSubview(activityIndicatorView)
-//        activityIndicatorView.startAnimating()
         statusLabel.hidden = true
         offlineImage.hidden = true
     }
@@ -35,6 +32,10 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        self.edgesForExtendedLayout = UIRectEdge.All
+//        self.tableView.contentInset = UIEdgeInsetsMake(0.0, 0.0, CGRectGetHeight(self.tabBarController!.tabBar.frame), 0.0)
+        
+        
         activityIndicatorView.center = self.view.center
         self.view.addSubview(activityIndicatorView)
         activityIndicatorView.startAnimating()
@@ -133,17 +134,21 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         cell.accessoryType = UITableViewCellAccessoryType.None
         let movie = movies![indexPath.row]
         let title = movie["title"] as! String
-        
+        let releaseDate = movie["release_date"] as! String
+        let votes = movie["vote_average"] as! Float
+        let roundedVotes = votes/2.0
         let overview = movie["overview"] as! String
-//        print("title:\(title) id:\(id)")
-        
         let baseUrl = "http://image.tmdb.org/t/p/w500"
+        
         if let posterPath = movie["poster_path"] as? String {
             let imageUrl = NSURL(string: baseUrl + posterPath)
             cell.posterView.setImageWithURL(imageUrl!)
         } else {
             cell.posterView.image = UIImage(named: "no_image.png")
         }
+        
+        cell.floatRatingView.rating = Float(roundedVotes)
+        cell.releasedOn.text = releaseDate
         cell.titleLabel.text = title
         cell.overviewLabel.text = overview
         cell.textLabel!.sizeToFit()

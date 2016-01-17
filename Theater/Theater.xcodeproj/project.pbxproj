@@ -17,6 +17,7 @@
 		7199EF171C46706000EBEEA8 /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7199EF161C46706000EBEEA8 /* MoviesViewController.swift */; };
 		7199EF1A1C4679E400EBEEA8 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7199EF191C4679E400EBEEA8 /* MovieCell.swift */; };
 		7199EF1D1C47CACC00EBEEA8 /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7199EF1C1C47CACC00EBEEA8 /* RoundView.swift */; };
+		71D78B701C4B85F700C00265 /* FloatRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D78B6F1C4B85F700C00265 /* FloatRatingView.swift */; };
 		E794B60D3C2DE9960D0ADD68 /* Pods_Theater.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C47052F4C24E9A6D0F205706 /* Pods_Theater.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		7199EF161C46706000EBEEA8 /* MoviesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
 		7199EF191C4679E400EBEEA8 /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		7199EF1C1C47CACC00EBEEA8 /* RoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
+		71D78B6F1C4B85F700C00265 /* FloatRatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatRatingView.swift; sourceTree = "<group>"; };
 		C47052F4C24E9A6D0F205706 /* Pods_Theater.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Theater.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -142,6 +144,7 @@
 		7199EF181C4679C300EBEEA8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				71D78B6F1C4B85F700C00265 /* FloatRatingView.swift */,
 				7199EF191C4679E400EBEEA8 /* MovieCell.swift */,
 				7199EF1C1C47CACC00EBEEA8 /* RoundView.swift */,
 			);
@@ -359,6 +362,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71D78B701C4B85F700C00265 /* FloatRatingView.swift in Sources */,
 				7199EEE91C466FF100EBEEA8 /* AppDelegate.swift in Sources */,
 				7199EF1D1C47CACC00EBEEA8 /* RoundView.swift in Sources */,
 				7151A17D1C4AE38E00D4D56B /* DetailedViewController.swift in Sources */,
