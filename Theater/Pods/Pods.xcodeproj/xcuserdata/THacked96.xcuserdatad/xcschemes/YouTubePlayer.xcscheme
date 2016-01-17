@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '4112A606D32D31980D2DE4CC'
-               BlueprintName = 'DGActivityIndicatorView'
+               BlueprintIdentifier = 'A24FEB28145893F225E8386F'
+               BlueprintName = 'YouTubePlayer'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'DGActivityIndicatorView.framework'>
+               BuildableName = 'YouTubePlayer.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

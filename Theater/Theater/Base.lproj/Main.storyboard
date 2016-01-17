@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--Movies View Controller-->
+        <!--In theaters-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MoviesViewController" customModule="Theater" customModuleProvider="target" sceneMemberID="viewController">
@@ -34,7 +34,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="187"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JqY-ek-gGU" id="xWD-1K-GdK">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="187"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="187"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" id="6Oy-is-E6b">
@@ -77,7 +77,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" id="hSZ-gj-efF"/>
+                    <navigationItem key="navigationItem" title="In theaters" id="hSZ-gj-efF"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="offlineImage" destination="Zmb-7G-bMi" id="cVk-51-6A8"/>
@@ -99,19 +99,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tL3-hm-VPU">
-                                <rect key="frame" x="9" y="69" width="356" height="21"/>
+                                <rect key="frame" x="9" y="74" width="356" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1xS-1f-454">
-                                <rect key="frame" x="20" y="98" width="335" height="191"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1xS-1f-454">
+                                <rect key="frame" x="20" y="129" width="335" height="250"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" id="6wn-ha-gOj" customClass="YouTubePlayerView" customModule="YouTubePlayer">
+                                <rect key="frame" x="20" y="393" width="335" height="267"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -120,11 +125,12 @@
                     <connections>
                         <outlet property="descriptionLabel" destination="1xS-1f-454" id="cjh-qG-d78"/>
                         <outlet property="titleLabel" destination="tL3-hm-VPU" id="vtV-NO-oRv"/>
+                        <outlet property="videoPlayer" destination="6wn-ha-gOj" id="b7d-Ko-Al4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WhI-j8-Teg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1032.5" y="372.5"/>
+            <point key="canvasLocation" x="1062.5" y="371.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Kdg-Ui-ncj">

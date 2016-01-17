@@ -9,6 +9,7 @@ target 'Theater' do
     pod "RJImageLoader"
     pod "SwiftSpinner"
     pod 'DGActivityIndicatorView'
+    pod 'YouTubePlayer'
 end
 
 target 'TheaterTests' do

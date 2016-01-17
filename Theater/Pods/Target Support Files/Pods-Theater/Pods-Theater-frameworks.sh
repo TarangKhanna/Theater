@@ -89,6 +89,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Theater/DGElasticPullToRefresh.framework"
   install_framework "Pods-Theater/RJImageLoader.framework"
   install_framework "Pods-Theater/SwiftSpinner.framework"
+  install_framework "Pods-Theater/YouTubePlayer.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Theater/AFNetworking.framework"
@@ -96,4 +97,5 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Theater/DGElasticPullToRefresh.framework"
   install_framework "Pods-Theater/RJImageLoader.framework"
   install_framework "Pods-Theater/SwiftSpinner.framework"
+  install_framework "Pods-Theater/YouTubePlayer.framework"
 fi

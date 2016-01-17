@@ -24,12 +24,10 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     let activityIndicatorView = DGActivityIndicatorView(type: DGActivityIndicatorAnimationType.FiveDots, tintColor: UIColor(red: 78/255.0, green: 221/255.0, blue: 200/255.0, alpha: 1.0), size: 70.0)
     
     override func viewWillAppear(animated: Bool) {
-//        let myTopPadding: CGFloat = 20
-//        self.tableView.contentInset = UIEdgeInsetsMake(myTopPadding, 0, 0, 0);
         self.view.backgroundColor = UIColor(red: 221/255.0, green: 221/255.0, blue: 221/255.0, alpha: 1)
-        activityIndicatorView.center = self.view.center
-        self.view.addSubview(activityIndicatorView)
-        activityIndicatorView.startAnimating()
+//        activityIndicatorView.center = self.view.center
+//        self.view.addSubview(activityIndicatorView)
+//        activityIndicatorView.startAnimating()
         statusLabel.hidden = true
         offlineImage.hidden = true
     }
@@ -37,10 +35,12 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        activityIndicatorView.center = self.view.center
+        self.view.addSubview(activityIndicatorView)
+        activityIndicatorView.startAnimating()
         self.tableView.tableFooterView = UIView(frame: CGRectZero)
         
         self.tableView.backgroundColor = UIColor.clearColor()
-       
         retrieve()
         
         let loadingView = DGElasticPullToRefreshLoadingViewCircle()
@@ -119,8 +119,10 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
                 let movie = movies![row]
                 let title = movie["title"] as! String
                 let description = movie["overview"] as! String
+                let youtubekey = movie["id"] as! Int
                 vc.titlePassed = title
                 vc.descriptionPassed = description
+                vc.YouTubeId = youtubekey
             }
         }
     }
@@ -131,10 +133,9 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         cell.accessoryType = UITableViewCellAccessoryType.None
         let movie = movies![indexPath.row]
         let title = movie["title"] as! String
-        let id = movie["id"] as! Int
         
         let overview = movie["overview"] as! String
-        print("title:\(title) id:\(id)")
+//        print("title:\(title) id:\(id)")
         
         let baseUrl = "http://image.tmdb.org/t/p/w500"
         if let posterPath = movie["poster_path"] as? String {
