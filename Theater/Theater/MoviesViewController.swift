@@ -26,7 +26,7 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     var movies: [NSDictionary]?
     var searchActive : Bool = false
     var filtered:[NSDictionary] = []
-    let activityIndicatorView = DGActivityIndicatorView(type: DGActivityIndicatorAnimationType.FiveDots, tintColor: UIColor(red: 78/255.0, green: 221/255.0, blue: 200/255.0, alpha: 1.0), size: 70.0)
+    let activityIndicatorView = DGActivityIndicatorView(type: DGActivityIndicatorAnimationType.RotatingSquares, tintColor: UIColor(red: 78/255.0, green: 221/255.0, blue: 200/255.0, alpha: 1.0), size: 70.0)
     
     override func viewWillAppear(animated: Bool) {
         self.view.backgroundColor = UIColor(red: 221/255.0, green: 221/255.0, blue: 221/255.0, alpha: 1)
@@ -42,9 +42,11 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         searchBar.delegate = self
         searchBar.endEditing(true)
         tableView.contentInset = UIEdgeInsetsMake(0, 0, 75, 0)
+        
         activityIndicatorView.center = self.view.center
         self.view.addSubview(activityIndicatorView)
         activityIndicatorView.startAnimating()
+        
         self.tableView.tableFooterView = UIView(frame: CGRectZero)
         
         self.tableView.backgroundColor = UIColor.clearColor()
@@ -61,7 +63,7 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         tableView.dataSource = self
         tableView.delegate = self
     }
-
+    
     func retrieve() {
         let apiKey = "a07e22bc18f5cb106bfe4cc1f83ad8ed"
         let url = NSURL(string:"https://api.themoviedb.org/3/movie/now_playing?api_key=\(apiKey)")
@@ -99,7 +101,6 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
-//        print("active")
         searchActive = true
     }
     
@@ -128,20 +129,20 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
             } else {
                 return false
             }
-//            let range = tmp.rangeOfString(searchText, options: NSStringCompareOptions.CaseInsensitiveSearch)
-//            return range?.count > 0
+            //            let range = tmp.rangeOfString(searchText, options: NSStringCompareOptions.CaseInsensitiveSearch)
+            //            return range?.count > 0
         })
         
-//        if(filtered.count == 0){
-//            searchActive = false
-//        } else {
-//            searchActive = true
-//        }
+        //        if(filtered.count == 0){
+        //            searchActive = false
+        //        } else {
+        //            searchActive = true
+        //        }
         if searchText.characters.count > 0 {
             searchActive = true
         } else {
             searchActive = false
-//            searchBar.resignFirstResponder()
+            //            searchBar.resignFirstResponder()
         }
         self.tableView.reloadData()
     }
@@ -175,15 +176,24 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         if let cell = sender as? UITableViewCell {
             let row = tableView.indexPathForCell(cell)!.row
             if segue.identifier == "details" {
-                searchActive = false
                 let vc = segue.destinationViewController as! DetailedViewController
-                let movie = movies![row]
-                let title = movie["title"] as! String
-                let description = movie["overview"] as! String
-                let youtubekey = movie["id"] as! Int
-                vc.titlePassed = title
-                vc.descriptionPassed = description
-                vc.YouTubeId = youtubekey
+                if searchActive && filtered.count > 0 {
+                    let movie = filtered[row]
+                    let title = movie["title"] as! String
+                    let description = movie["overview"] as! String
+                    let youtubekey = movie["id"] as! Int
+                    vc.titlePassed = title
+                    vc.descriptionPassed = description
+                    vc.YouTubeId = youtubekey
+                } else {
+                    let movie = movies![row]
+                    let title = movie["title"] as! String
+                    let description = movie["overview"] as! String
+                    let youtubekey = movie["id"] as! Int
+                    vc.titlePassed = title
+                    vc.descriptionPassed = description
+                    vc.YouTubeId = youtubekey
+                }
             }
         }
     }
