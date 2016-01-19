@@ -23,10 +23,15 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     
     @IBOutlet weak var searchBar: UISearchBar!
     
+    
+    @IBOutlet weak var loadedOutlet: UIBarButtonItem!
+    
     var movies: [NSDictionary]?
     var searchActive : Bool = false
+    var allLoaded : Bool = false
     var didSegue : Bool = false
     var filtered:[NSDictionary] = []
+    var pages = 1
     let activityIndicatorView = DGActivityIndicatorView(type: DGActivityIndicatorAnimationType.RotatingSquares, tintColor: UIColor(red: 78/255.0, green: 221/255.0, blue: 200/255.0, alpha: 1.0), size: 70.0)
     
     override func viewWillAppear(animated: Bool) {
@@ -34,6 +39,54 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         statusLabel.hidden = true
         offlineImage.hidden = true
         searchActive = false
+    }
+    
+    
+    @IBAction func loadAll(sender: AnyObject) {
+        // below is code to load all 39 pages of movies
+        if(!allLoaded) {
+            allLoaded = true
+            loadedOutlet.title = "All loaded!"
+            for t in 2...39 {
+                //            print("https://api.themoviedb.org/3/movie/now_playing?api_key=\(apiKey)&page=\(t)")
+                let apiKey = "a07e22bc18f5cb106bfe4cc1f83ad8ed"
+                let url = NSURL(string:"https://api.themoviedb.org/3/movie/now_playing?api_key=\(apiKey)&page=\(t)")
+                let request = NSURLRequest(URL: url!)
+                let session = NSURLSession(
+                    configuration: NSURLSessionConfiguration.defaultSessionConfiguration(),
+                    delegate:nil,
+                    delegateQueue:NSOperationQueue.mainQueue()
+                )
+                
+                let task : NSURLSessionDataTask = session.dataTaskWithRequest(request,
+                    completionHandler: { (dataOrNil, response, error) in
+                        if error != nil{
+                            self.view.bringSubviewToFront(self.offlineImage)
+                            self.view.bringSubviewToFront(self.statusLabel)
+                            self.offlineImage.hidden = false
+                            self.statusLabel.hidden = false
+                            self.activityIndicatorView.stopAnimating()
+                            self.activityIndicatorView.removeFromSuperview()
+                        }
+                        if let data = dataOrNil {
+                            if let responseDictionary = try! NSJSONSerialization.JSONObjectWithData(
+                                data, options:[]) as? NSDictionary {
+                                    self.statusLabel.hidden = true
+                                    self.offlineImage.hidden = true
+                                    let moviesAdd = responseDictionary["results"] as? [NSDictionary]
+                                    self.movies?.appendContentsOf(moviesAdd!)
+                                    if let fil = self.movies as [NSDictionary]? {
+                                        self.filtered = fil
+                                    }
+                                    self.tableView.reloadData()
+                                    self.activityIndicatorView.stopAnimating()
+                                    self.activityIndicatorView.removeFromSuperview()
+                            }
+                        }
+                });
+                task.resume()
+            }
+        }
     }
     
     override func viewDidLoad() {
@@ -90,6 +143,8 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
                         data, options:[]) as? NSDictionary {
                             self.statusLabel.hidden = true
                             self.offlineImage.hidden = true
+                            self.pages = (responseDictionary["total_pages"] as? Int)!
+                            
                             self.movies = responseDictionary["results"] as? [NSDictionary]
                             self.filtered = self.movies!
                             self.tableView.reloadData()
@@ -133,12 +188,6 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
             //            let range = tmp.rangeOfString(searchText, options: NSStringCompareOptions.CaseInsensitiveSearch)
             //            return range?.count > 0
         })
-        
-        //        if(filtered.count == 0){
-        //            searchActive = false
-        //        } else {
-        //            searchActive = true
-        //        }
         if searchText.characters.count > 0 {
             searchActive = true
         } else {

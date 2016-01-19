@@ -96,9 +96,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" title="In theaters" id="hSZ-gj-efF"/>
+                    <navigationItem key="navigationItem" title="In theaters" id="hSZ-gj-efF">
+                        <barButtonItem key="rightBarButtonItem" title="Load All!" id="Fse-g1-hu5">
+                            <connections>
+                                <action selector="loadAll:" destination="BYZ-38-t0r" id="EE0-AX-COa"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="loadedOutlet" destination="Fse-g1-hu5" id="CFs-Yx-EeS"/>
                         <outlet property="offlineImage" destination="Zmb-7G-bMi" id="cVk-51-6A8"/>
                         <outlet property="searchBar" destination="rIE-NY-Lx9" id="1Rg-5g-qU3"/>
                         <outlet property="statusLabel" destination="sOE-Uh-4e8" id="Ogk-2Y-S3k"/>
