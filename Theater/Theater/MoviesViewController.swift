@@ -25,6 +25,7 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     
     var movies: [NSDictionary]?
     var searchActive : Bool = false
+    var didSegue : Bool = false
     var filtered:[NSDictionary] = []
     let activityIndicatorView = DGActivityIndicatorView(type: DGActivityIndicatorAnimationType.RotatingSquares, tintColor: UIColor(red: 78/255.0, green: 221/255.0, blue: 200/255.0, alpha: 1.0), size: 70.0)
     
@@ -177,11 +178,12 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
             let row = tableView.indexPathForCell(cell)!.row
             if segue.identifier == "details" {
                 let vc = segue.destinationViewController as! DetailedViewController
-                if searchActive && filtered.count > 0 {
+                if searchActive && filtered.count > 0 || didSegue && filtered.count > 0{
                     let movie = filtered[row]
                     let title = movie["title"] as! String
                     let description = movie["overview"] as! String
                     let youtubekey = movie["id"] as! Int
+                    didSegue = true
                     vc.titlePassed = title
                     vc.descriptionPassed = description
                     vc.YouTubeId = youtubekey
