@@ -27,6 +27,7 @@ The following **additional** features are implemented:
 - [x] Cards like tableview 
 - [x] Ratings shows in star format (out of 5)
 - [x] Trailer is shown 
+- [x] Loading all 39 pages of data
 
 ## Video Walkthrough 
 
