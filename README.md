@@ -35,14 +35,18 @@ Here's a walkthrough of implemented user stories:
 
 <img src='https://github.com/TarangKhanna/Theater/blob/master/Theater/GifTheater_1.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
+## Collection View and loading more data:
+
 And here is switching to Collection view and loading more data:
+
 <img src='https://github.com/TarangKhanna/Theater/blob/master/Theater/GifTheater_2.gif' title='More Options' width='' alt='More Options' />
 
 GIFs created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+Loading more data from the API required calling the API again (39) times and add it to the movies NSDictionary, interesting to implement. 
+I prefer the way my tableview looked so I created collection view and tableview. 
 
 ## License
 
