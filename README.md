@@ -35,7 +35,10 @@ Here's a walkthrough of implemented user stories:
 
 <img src='https://github.com/TarangKhanna/Theater/blob/master/Theater/GifTheater_1.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-GIF created with [LiceCap](http://www.cockos.com/licecap/).
+And here is switching to Collection view and loading more data:
+<img src='https://github.com/TarangKhanna/Theater/blob/master/Theater/GifTheater_2.gif' title='More Options' width='' alt='More Options' />
+
+GIFs created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
