@@ -91,6 +91,24 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // modifying navigation bar
+        if let navigationBar = navigationController?.navigationBar {
+            navigationBar.tintColor = UIColor(red: 1.0, green: 0.25, blue: 0.25, alpha: 0.8)
+            self.navigationController!.navigationBar.translucent = true
+            self.navigationController!.view.backgroundColor = UIColor.clearColor()
+
+//            let shadow = NSShadow()
+//            shadow.shadowColor = UIColor.blueColor().colorWithAlphaComponent(0.5)
+//            shadow.shadowOffset = CGSizeMake(2, 2);
+//            shadow.shadowBlurRadius = 2;
+            navigationBar.titleTextAttributes = [
+                NSFontAttributeName : UIFont.boldSystemFontOfSize(22),
+                NSForegroundColorAttributeName : UIColor(red: 46/255, green: 160/255, blue: 233/255, alpha: 1),
+//                NSShadowAttributeName : shadow
+            ]
+        }
+        
         self.tableView.keyboardDismissMode = UIScrollViewKeyboardDismissMode.OnDrag
         searchActive = false
         searchBar.delegate = self
@@ -229,21 +247,11 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
                 let vc = segue.destinationViewController as! DetailedViewController
                 if searchActive && filtered.count > 0 || didSegue && filtered.count > 0{
                     let movie = filtered[row]
-                    let title = movie["title"] as! String
-                    let description = movie["overview"] as! String
-                    let youtubekey = movie["id"] as! Int
                     didSegue = true
-                    vc.titlePassed = title
-                    vc.descriptionPassed = description
-                    vc.YouTubeId = youtubekey
+                    vc.movie = movie
                 } else {
                     let movie = movies![row]
-                    let title = movie["title"] as! String
-                    let description = movie["overview"] as! String
-                    let youtubekey = movie["id"] as! Int
-                    vc.titlePassed = title
-                    vc.descriptionPassed = description
-                    vc.YouTubeId = youtubekey
+                    vc.movie = movie
                 }
             }
         }

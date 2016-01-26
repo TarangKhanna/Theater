@@ -156,8 +156,8 @@
 		7199EF1B1C4679F200EBEEA8 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				7128E8491C5447650051DF49 /* CollectionViewController.swift */,
 				7199EF161C46706000EBEEA8 /* MoviesViewController.swift */,
+				7128E8491C5447650051DF49 /* CollectionViewController.swift */,
 				7151A17C1C4AE38E00D4D56B /* DetailedViewController.swift */,
 			);
 			name = "View Controllers";
