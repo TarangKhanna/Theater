@@ -17,12 +17,16 @@ class DetailedViewController: UIViewController {
     
     @IBOutlet weak var descriptionText: UITextView!
     
-    
     @IBOutlet weak var posterImageView: UIImageView!
     
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    @IBOutlet weak var infoDescriptionView: UIView!
+    
+    @IBOutlet weak var infoVideo: YouTubePlayerView!
+    
+    
     var movies: [NSDictionary]?
-//    var descriptionPassed:String = ""
-//    var titlePassed:String? = ""
     var YouTubeId:Int? = 0
     var movie: NSDictionary!
     
@@ -120,7 +124,8 @@ class DetailedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        scrollView.contentSize = CGSize(width: scrollView.frame.size.width, height: infoVideo.frame.origin.y + infoVideo.frame.size.height) // how to access y coordinate of a view?api changed
+//        descriptionText.sizeToFit()
     }
 
     override func didReceiveMemoryWarning() {

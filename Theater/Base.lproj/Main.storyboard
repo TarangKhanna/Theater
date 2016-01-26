@@ -130,36 +130,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="ZNa-0F-lEf">
-                                <rect key="frame" x="0.0" y="65" width="375" height="602"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <view opaque="NO" alpha="0.5" contentMode="scaleToFill" id="0Ok-P5-DTj">
-                                <rect key="frame" x="0.0" y="357" width="375" height="310"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="BCL-iU-hmM">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tL3-hm-VPU">
-                                        <rect key="frame" x="9" y="13" width="356" height="21"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="ZNa-0F-lEf">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Description" textAlignment="natural" id="Xq3-IT-ZHK">
-                                        <rect key="frame" x="20" y="52" width="335" height="238"/>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" id="6wn-ha-gOj" customClass="YouTubePlayerView" customModule="YouTubePlayer">
+                                        <rect key="frame" x="0.0" y="977" width="375" height="292"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <view opaque="NO" alpha="0.5" contentMode="scaleToFill" id="0Ok-P5-DTj">
+                                        <rect key="frame" x="0.0" y="667" width="375" height="310"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tL3-hm-VPU">
+                                                <rect key="frame" x="9" y="13" width="356" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Description" textAlignment="natural" id="Xq3-IT-ZHK">
+                                                <rect key="frame" x="9" y="42" width="356" height="260"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    </view>
                                 </subviews>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
-                            </view>
-                            <view contentMode="scaleToFill" id="6wn-ha-gOj" customClass="YouTubePlayerView" customModule="YouTubePlayer">
-                                <rect key="frame" x="0.0" y="65" width="375" height="292"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -167,14 +173,17 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="descriptionText" destination="Xq3-IT-ZHK" id="wsE-xL-lCD"/>
+                        <outlet property="infoDescriptionView" destination="0Ok-P5-DTj" id="uwT-Hc-QpF"/>
+                        <outlet property="infoVideo" destination="6wn-ha-gOj" id="72F-dP-dnr"/>
                         <outlet property="posterImageView" destination="ZNa-0F-lEf" id="xtV-jS-XRI"/>
+                        <outlet property="scrollView" destination="BCL-iU-hmM" id="2hF-ep-34l"/>
                         <outlet property="titleLabel" destination="tL3-hm-VPU" id="vtV-NO-oRv"/>
                         <outlet property="videoPlayer" destination="6wn-ha-gOj" id="b7d-Ko-Al4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WhI-j8-Teg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1100.5" y="61.5"/>
+            <point key="canvasLocation" x="1100.5" y="50.5"/>
         </scene>
         <!--Posters-->
         <scene sceneID="jLV-oJ-nId">
