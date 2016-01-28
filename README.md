@@ -74,8 +74,8 @@ Time spent: **X** hours spent in total
 The following **required** functionality is completed:
 
 - [x] User can view movie details by tapping on a cell.
-- [ ] User can select from a tab bar for either **Now Playing** or **Top Rated** movies.
-- [ ] Customize the selection effect of the cell.
+- [x] User can select from a tab bar for either **Now Playing** or **Top Rated** movies.
+- [x] Customize the selection effect of the cell. (Material like effect on selection)
 
 The following **optional** features are implemented:
 
@@ -88,8 +88,8 @@ The following **additional** features are implemented:
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1. 
-2. 
+1. Customizing how the view looks especially in detail view controller where the description lies.
+2. Better ways to show the poster image properly in detail view controller.
 
 ## Video Walkthrough 
 
