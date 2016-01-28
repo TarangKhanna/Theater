@@ -10,6 +10,7 @@ target 'Theater' do
     pod "SwiftSpinner"
     pod 'DGActivityIndicatorView'
     pod 'YouTubePlayer'
+    pod 'MaterialKit', :head
 end
 
 target 'TheaterTests' do

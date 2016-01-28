@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'AAD65E3288A87440EE5DC36E'
-               BlueprintName = 'DGActivityIndicatorView'
+               BlueprintIdentifier = '62B7F391E37C28FB0815FBA9'
+               BlueprintName = 'MaterialKit'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'DGActivityIndicatorView.framework'>
+               BuildableName = 'MaterialKit.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

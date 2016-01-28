@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MaterialKit
 
-class MovieCell: UITableViewCell, FloatRatingViewDelegate {
+class MovieCell: MKTableViewCell, FloatRatingViewDelegate {
 
     @IBOutlet weak var titleLabel: UILabel!
     

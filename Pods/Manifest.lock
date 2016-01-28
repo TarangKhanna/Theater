@@ -16,6 +16,7 @@ PODS:
     - AFNetworking/NSURLSession
   - DGActivityIndicatorView (2.0)
   - DGElasticPullToRefresh (1.0.3)
+  - MaterialKit (HEAD based on 0.3.5)
   - RJImageLoader (0.3.0)
   - SwiftSpinner (0.8.0)
   - YouTubePlayer (0.3.0)
@@ -24,6 +25,7 @@ DEPENDENCIES:
   - AFNetworking
   - DGActivityIndicatorView
   - DGElasticPullToRefresh
+  - MaterialKit (HEAD)
   - RJImageLoader
   - SwiftSpinner
   - YouTubePlayer
@@ -32,6 +34,7 @@ SPEC CHECKSUMS:
   AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
   DGActivityIndicatorView: 52875b025a6ccf6a431a905285c12e2bb95eb559
   DGElasticPullToRefresh: 040f39ae69840b3261d163fe6735c5901bf851e9
+  MaterialKit: 6f1e9382f89593df768bc0c31ded9952a6d8ad46
   RJImageLoader: f0d9edebeb7837feb0ce51759826900645770db7
   SwiftSpinner: 11c2c5ec7443d92f3026d3067ca8a91d4adef13f
   YouTubePlayer: 88713a96c356f2c88da8925eb61438eda88bcd57

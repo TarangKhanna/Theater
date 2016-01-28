@@ -12,6 +12,7 @@ import DGElasticPullToRefresh
 import RJImageLoader
 import SwiftSpinner
 import DGActivityIndicatorView
+import MaterialKit
 
 class MoviesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UITextFieldDelegate {
     
@@ -259,7 +260,11 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("MovieCell", forIndexPath: indexPath) as! MovieCell
-        
+        cell.rippleLocation = .Center
+        cell.rippleLayerColor = UIColor.MKColor.Blue
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = UIColor.MKColor.LightBlue
+        cell.selectedBackgroundView = backgroundView
         cell.accessoryType = UITableViewCellAccessoryType.None
         
         if searchActive && filtered.count > 0 {
