@@ -100,14 +100,9 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
             self.navigationController!.navigationBar.translucent = true
             self.navigationController!.view.backgroundColor = UIColor.clearColor()
 
-//            let shadow = NSShadow()
-//            shadow.shadowColor = UIColor.blueColor().colorWithAlphaComponent(0.5)
-//            shadow.shadowOffset = CGSizeMake(2, 2);
-//            shadow.shadowBlurRadius = 2;
             navigationBar.titleTextAttributes = [
                 NSFontAttributeName : UIFont.boldSystemFontOfSize(22),
                 NSForegroundColorAttributeName : UIColor(red: 46/255, green: 160/255, blue: 233/255, alpha: 1),
-//                NSShadowAttributeName : shadow
             ]
         }
         
@@ -115,11 +110,15 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         searchActive = false
         searchBar.delegate = self
         searchBar.endEditing(true)
-        tableView.contentInset = UIEdgeInsetsMake(0, 0, 75, 0)
+        let tabBarHeight = self.tabBarController?.tabBar.bounds.height
+
+        tableView.contentInset = UIEdgeInsetsMake(0, 0, tabBarHeight!+75, 0)
         
         activityIndicatorView.center = self.view.center
         self.view.addSubview(activityIndicatorView)
         activityIndicatorView.startAnimating()
+        
+        
         
         self.tableView.tableFooterView = UIView(frame: CGRectZero)
         
@@ -286,16 +285,13 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
                     placeholderImage: nil,
                     success: { (imageRequest, imageResponse, image) -> Void in
                         
-                        // imageResponse will be nil if the image is cached
                         if imageResponse != nil {
-                            //                        print("Image was NOT cached, fade in image")
                             cell.posterView.alpha = 0.0
                             cell.posterView.image = image
                             UIView.animateWithDuration(0.3, animations: { () -> Void in
                                 cell.posterView.alpha = 1.0
                             })
                         } else {
-                            //                        print("Image was cached so just update the image")
                             cell.posterView.image = image
                         }
                     },
@@ -333,16 +329,13 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
                     placeholderImage: nil,
                     success: { (imageRequest, imageResponse, image) -> Void in
                         
-                        // imageResponse will be nil if the image is cached
                         if imageResponse != nil {
-                            //                        print("Image was NOT cached, fade in image")
                             cell.posterView.alpha = 0.0
                             cell.posterView.image = image
                             UIView.animateWithDuration(0.3, animations: { () -> Void in
                                 cell.posterView.alpha = 1.0
                             })
                         } else {
-                            //                        print("Image was cached so just update the image")
                             cell.posterView.image = image
                         }
                     },

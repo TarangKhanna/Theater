@@ -25,6 +25,8 @@ class DetailedViewController: UIViewController {
     
     @IBOutlet weak var infoVideo: YouTubePlayerView!
     
+    var tableHeaderMaskToBeVisible: CAShapeLayer!
+    
     
     var movies: [NSDictionary]?
     var YouTubeId:Int? = 0
@@ -33,6 +35,19 @@ class DetailedViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+//        self.tableHeaderMaskToBeVisible = CAShapeLayer()
+//        self.tableHeaderMaskToBeVisible.fillColor = UIColor.blackColor().CGColor
+//        self.posterImageView.layer.mask = self.tableHeaderMaskToBeVisible
+        
+//        let trapeziumHeaderMask = UIBezierPath()
+//        trapeziumHeaderMask.moveToPoint(CGPointMake(0, 0))
+//        let width = posterImageView.frame.size.width
+//        let height = posterImageView.frame.size.height
+//        trapeziumHeaderMask.addLineToPoint(CGPointMake(width, 0))
+//        trapeziumHeaderMask.addLineToPoint(CGPointMake(width, height))
+//        trapeziumHeaderMask.addLineToPoint(CGPointMake(0, height))
+//        self.tableHeaderMaskToBeVisible.path = trapeziumHeaderMask.CGPath
+
         // set poster image
         
         self.navigationController!.navigationBar.translucent = true
@@ -124,8 +139,7 @@ class DetailedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        scrollView.contentSize = CGSize(width: scrollView.frame.size.width, height: infoVideo.frame.origin.y + infoVideo.frame.size.height) // how to access y coordinate of a view?api changed
-//        descriptionText.sizeToFit()
+        scrollView.contentSize = CGSize(width: scrollView.frame.size.width, height: infoVideo.frame.origin.y + infoVideo.frame.size.height) 
     }
 
     override func didReceiveMemoryWarning() {
