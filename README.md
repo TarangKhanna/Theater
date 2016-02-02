@@ -67,7 +67,7 @@ I prefer the way my tableview looked so I created collection view and tableview.
 
 **Theater** is a movies app displaying box office and top rental DVDs using [The Movie Database API](http://docs.themoviedb.apiary.io/#).
 
-Time spent: **X** hours spent in total
+Time spent: **3** hours spent in total
 
 ## User Stories
 
